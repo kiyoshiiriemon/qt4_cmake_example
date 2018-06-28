@@ -1,0 +1,12 @@
+dependencies:
+  pre:
+    - mkdir build; cd build; cmake ..; make
+  override:
+    - cd make; make; make test
+test:
+  override:
+    - cd ./hello
+checkout:
+  post:
+    - git submodule init
+    - git submodule update
