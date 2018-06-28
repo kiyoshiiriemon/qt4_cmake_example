@@ -1,13 +1,14 @@
-dependencies:
-  pre:
-    - mkdir build; cd build; cmake ..; make
-  override:
-    - cd make; make; make test
-test:
-  override:
-    - ./hello
-checkout:
-  post:
-    - git submodule init
-    - git submodule update
-    
+version: 2
+jobs:
+  build:
+    docker:
+      - image: debian:stretch
+    steps:
+      - checkout
+      - run:
+          name: Greeting
+          command: echo Hello, world.
+      - run:
+          name: Print the Current Time
+          command: date
+          
