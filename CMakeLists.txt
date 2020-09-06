@@ -4,14 +4,12 @@ PROJECT(helloqt)
 
 SET(CMAKE_AUTOMOC ON)
 SET(CMAKE_INCLUDE_CURRENT_DIR ON)
-FIND_PACKAGE(Qt4 REQUIRED)
-INCLUDE(${QT_USE_FILE})
-SET(QT_USE_QTMAIN true)
+FIND_PACKAGE(Qt5Widgets REQUIRED)
 
 SET(helloqt_SOURCES main.cpp helloqtwindow.cpp)
 SET(helloqt_HEADERS helloqtwindow.h)
 SET(helloqt_UIS helloqtwindow.ui)
-QT4_WRAP_UI(helloqt_UIS_HEADERS ${helloqt_UIS})
+QT5_WRAP_UI(helloqt_UIS_HEADERS ${helloqt_UIS})
 
 ADD_EXECUTABLE(helloqt
 	${helloqt_SOURCES}
@@ -20,5 +18,6 @@ ADD_EXECUTABLE(helloqt
 )
 
 TARGET_LINK_LIBRARIES(helloqt
-${QT_LIBRARIES}
+	Qt5::Core
+	Qt5::Widgets
 )

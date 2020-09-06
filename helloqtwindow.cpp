@@ -1,6 +1,6 @@
 #include "helloqtwindow.h"
 
-HelloQtWindow::HelloQtWindow(QWidget *, Qt::WFlags)
+HelloQtWindow::HelloQtWindow(QWidget *, Qt::WindowFlags)
 {
 	ui.setupUi(this);
 	connectSignals();
