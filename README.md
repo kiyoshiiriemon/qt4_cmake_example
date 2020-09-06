@@ -1,2 +1,2 @@
-qt4_cmake_example
+qt5_cmake_example
 =================
